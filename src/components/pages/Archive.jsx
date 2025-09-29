@@ -2,7 +2,9 @@ import React from 'react'
 
 function Archive() {
   return (
-    <div>Archive</div>
+    <div>
+      I'm still cooking this project 🍳 Come back soon!
+    </div>
   )
 }
 

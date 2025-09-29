@@ -2,7 +2,9 @@ import React from 'react'
 
 function Trash() {
   return (
-    <div>Trash</div>
+    <div>
+      I'm still cooking this project 🍳 Come back soon!
+    </div>
   )
 }
 
