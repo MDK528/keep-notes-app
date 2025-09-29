@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-Reminders.jsx
+src/components/pages/Reminders.jsx
 *.local
 
 # Editor directories and files
