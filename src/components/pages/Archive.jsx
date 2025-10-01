@@ -2,7 +2,7 @@ import React from 'react'
 
 function Archive() {
   return (
-    <div>
+    <div className='sm:w-lg md:w-xl mx-auto rounded-md p-2 my-2 text-xl'>
       I'm still cooking this project 🍳 Come back soon!
     </div>
   )
