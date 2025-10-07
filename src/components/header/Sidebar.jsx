@@ -7,8 +7,8 @@ function Sidebar()
     const { menubarStatus } = useMenubar()
 
     return (
-        <aside className={`fixed top-15 z-40 h-full py-2.5`}>
-            <div className={`flex flex-col ${menubarStatus ? 'ml-0 translate-x-0' : 'ml-2 -translate-x-100 sm:translate-x-0'}`}>
+        <aside className={`fixed top-15 z-40 h-full py-2.5 `}>
+            <div className={`flex flex-col  ${menubarStatus ? 'ml-0 translate-x-0' : 'ml-2 -translate-x-100 sm:translate-x-0'}`}>
                 <NavLink
                     className={({ isActive }) => `py-3.5 px-3.5 h-12 text-base sm:text-lg 
                         sm:font-semibold  flex items-center gap-10
