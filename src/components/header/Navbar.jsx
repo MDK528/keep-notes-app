@@ -18,7 +18,7 @@ export default function Component() {
   return (
     <header className="border-b px-2.5 sm:px-3 
     w-full fixed top-0 opacity-100 z-10 dark:bg-[#0A0A0A] bg-white">
-      <div className="flex h-16 items-center justify-between gap-2">
+      <div className="flex h-16 items-center justify-between gap-5">
         <div className="flex-1">
           <div className="flex items-center gap-2 ">
               <Hamburger/>
@@ -53,8 +53,13 @@ export default function Component() {
           </div>
         </div>
 
-        <div className="flex flex-1 items-center justify-end gap-2">
+        <div className="flex flex-1 items-center  justify-end gap-5">
           <AnimatedThemeToggler className={'cursor-pointer'}/>
+          {/* <div>
+            <img src="" alt="img" 
+              className="h-8 w-8 rounded-full border border-black"
+            />
+          </div> */}
         </div>
       </div>
     </header>
