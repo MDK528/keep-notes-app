@@ -1,10 +1,11 @@
-import { useId } from "react"
-import { SearchIcon, X } from "lucide-react"
+import { useId, useState } from "react"
+import { LogOut, SearchIcon, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import Hamburger from "@/components/Hamburger"
 import {useNote} from '@/context/contexts'
+import { useAuth0 } from "@auth0/auth0-react"
 
 export default function Component() {
   const id = useId()
@@ -13,6 +14,15 @@ export default function Component() {
 
   const clearSearch = () => {
     setSearchQuery('')
+  }
+
+  const {user, logout} = useAuth0()
+
+  const [drpusermenu, setDrpUserMenu] = useState(false)
+
+  const handleUsermenu = (e) => {
+    e.preventDefault()
+    setDrpUserMenu(!drpusermenu)
   }
 
   return (
@@ -55,11 +65,30 @@ export default function Component() {
 
         <div className="flex flex-1 items-center  justify-end gap-5">
           <AnimatedThemeToggler className={'cursor-pointer'}/>
-          {/* <div>
-            <img src="" alt="img" 
-              className="h-8 w-8 rounded-full border border-black"
-            />
-          </div> */}
+          <div>
+            <button className="h-8 w-8 relative rounded-full cursor-pointer" onClick={handleUsermenu}>
+              <img src={user.picture} alt="img" 
+                className="h-8 w-8 rounded-full"
+              />
+            </button>
+
+            <div class={`z-50  ${drpusermenu ? 'fixed right-2' : 'hidden right-0'} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-[#855E08] dark:divide-gray-600`} id="user-dropdown">
+              <div class="px-4 py-3">
+                <span class="block text-lg text-gray-900 dark:text-white">{user.name}</span>
+                <span class="block text-sm  text-gray-900 truncate dark:text-white">{user.email}</span>
+
+                <button 
+                  className="text-gray-900 dark:text-white flex gap-1 items-center py-2 cursor-pointer"
+                  onClick={(e)=>logout()}
+                >
+                  <LogOut height={20} width={20}/>
+                  <span>Sign out</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </header>
