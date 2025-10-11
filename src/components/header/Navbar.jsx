@@ -72,10 +72,10 @@ export default function Component() {
               />
             </button>
 
-            <div class={`z-50  ${drpusermenu ? 'fixed right-2' : 'hidden right-0'} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-[#855E08] dark:divide-gray-600`} id="user-dropdown">
+            <div class={`z-50  ${drpusermenu ? 'fixed right-1' : 'hidden right-0'} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-[#855E08] dark:divide-gray-600`} id="user-dropdown">
               <div class="px-4 py-3">
-                <span class="block text-lg text-gray-900 dark:text-white">{user.name}</span>
-                <span class="block text-sm  text-gray-900 truncate dark:text-white">{user.email}</span>
+                <span class="block text-base sm:text-lg text-gray-900 dark:text-white">{user.name}</span>
+                <span class="block text-sm text-gray-900 truncate dark:text-white">{user.email}</span>
 
                 <button 
                   className="text-gray-900 dark:text-white flex gap-1 items-center py-2 cursor-pointer"
